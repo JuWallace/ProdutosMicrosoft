@@ -34,42 +34,49 @@ namespace ProjetoVendas
                 switch (opcao)
                 {
                     case 1:
-                        string op = "1";
+                        int op = 1;
                         Console.WriteLine("\t========================================\t");
                         Console.WriteLine("\t|         Cadastro de Clientes         |\t");
                         Console.WriteLine("\t========================================\t");
                         Console.WriteLine();
-                        while (op == "1") { 
+
+                        while (op == 1) { 
                             //Adiciona o item à lista
                             Console.WriteLine("Digite o nome do Cliente: ");
                             c.Nome = Console.ReadLine();
-                            lst.Add(c.Nome);
                             Console.WriteLine("Digite o CPF do Cliente: ");
                             c.Cpf = Console.ReadLine();
-                            lst.Add(c.Cpf);
+                            if (model.ValidaCPF.IsCpf(c.Cpf))
+                            {
+                                lst.Add(c.Nome);
+                                lst.Add(c.Cpf);
+                            }
+                            else
+                            {
+                                Console.WriteLine("CPF informaodo não é válido.");
+                            }
+                            
                             Console.WriteLine("Deseja inserir outro cliente? 1-SIM | 2-NÃO");
-                            op = Console.ReadLine();
+                            op = Convert.ToInt32(Console.ReadLine());
+
                         }
-                        //Mensagem OK
-                        //Console.WriteLine($"Nome cadastrado: {c.Nome} e CPF: {c.Cpf}");
+                        break;
+                    case 2:
+                        Console.WriteLine("\t========================================\t");
+                        Console.WriteLine("\t|           Lista de Clientes          |\t");
+                        Console.WriteLine("\t========================================\t");
+                        Console.WriteLine();
 
                         //Ordena a lista
                         //lst.Sort();
                         //Console.WriteLine("A lista tem " + lst.Count + " itens:");
                         ////Imprime cada item da lista
                         //lst.ForEach(i => Console.WriteLine(i));
+                        Console.WriteLine("NOME:         CPF:");
                         foreach (string alst in lst)
                         {
-                            Console.WriteLine($"{alst}");
+                            Console.Write($"{alst} |  ");
                         }
-                        break;
-                    case 2:
-                        Console.WriteLine("\t========================================\t");
-                        Console.WriteLine("\t|           Lista de Clientes           |\t");
-                        Console.WriteLine("\t========================================\t");
-                        Console.WriteLine();
-
-                        //Console.WriteLine($"{lst(c.Nome)} e {lst(c.Cpf)}");
 
                         break;
                     //case 3:
