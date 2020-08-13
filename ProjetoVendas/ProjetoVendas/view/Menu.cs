@@ -9,8 +9,8 @@ namespace ProjetoVendas
         public static void ExecMenu()
         {
             int opcao;
-            Cliente c = new Cliente();
-            List<string> lst = new List<string>(); 
+            Cliente c;
+            List<Cliente> clientes = new List<Cliente>(); 
             do
             {
                 Console.Clear();
@@ -34,48 +34,87 @@ namespace ProjetoVendas
                 switch (opcao)
                 {
                     case 1:
-                        int op = 1;
+                        c = new Cliente();
                         Console.WriteLine("\t========================================\t");
                         Console.WriteLine("\t|         Cadastro de Clientes         |\t");
                         Console.WriteLine("\t========================================\t");
                         Console.WriteLine();
 
-                        while (op == 1) { 
-                            //Adiciona o item à lista
-                            Console.WriteLine("Digite o nome do Cliente: ");
-                            c.Nome = Console.ReadLine();
-                            Console.WriteLine("Digite o CPF do Cliente: ");
-                            c.Cpf = Console.ReadLine();
-                            if (model.ValidaCPF.IsCpf(c.Cpf))
+                       //Adiciona o item à lista
+                       Console.WriteLine("Digite o nome do Cliente: ");
+                       c.Nome = Console.ReadLine();
+                       Console.WriteLine("Digite o CPF do Cliente: ");
+                       c.Cpf = Console.ReadLine();
+
+                        //VERIFICAÇÃO DO CPF
+                        if (model.ValidaCPF.IsCpf(c.Cpf))
+                        {
+                            if(clientes.Count == 0)
                             {
-                                lst.Add(c.Nome);
-                                lst.Add(c.Cpf);
+                                clientes.Add(c);
+                                Console.WriteLine("Cliente salvo com sucesso!");
                             }
                             else
                             {
-                                Console.WriteLine("CPF informaodo não é válido.");
+                                //for (int i = 0; i < clientes.Count; i++)
+                                //{
+                                //    if (clientes[i].Cpf == c.Cpf)
+                                //    {
+                                //        Console.WriteLine("CPF já existente.");
+                                //    }
+                                //    else
+                                //    {
+                                //        clientes.Add(c);
+                                //        Console.WriteLine("Cliente salvo com sucesso!");
+                                //    }
+                                //}
+
+                                bool encontrado = false;
+                                foreach (Cliente clienteCadastrado in clientes)
+                                {
+                                    if (clienteCadastrado.Cpf == c.Cpf)
+                                    {
+                                        
+                                        encontrado = true;
+                                    }
+                                }
+                                if (!encontrado)
+                                {
+                                    //Permitir o cadastro
+                                    clientes.Add(c);
+                                    Console.WriteLine("Cliente salvo com sucesso!");
+                                }
+                                else
+                                {
+                                    //Não permitir o cadastro
+                                    Console.WriteLine("CPF já existente.");
+                                    
+                                }
+
+
                             }
                             
-                            Console.WriteLine("Deseja inserir outro cliente? 1-SIM | 2-NÃO");
-                            op = Convert.ToInt32(Console.ReadLine());
-
                         }
-                        break;
+                            break;
                     case 2:
                         Console.WriteLine("\t========================================\t");
                         Console.WriteLine("\t|           Lista de Clientes          |\t");
                         Console.WriteLine("\t========================================\t");
                         Console.WriteLine();
 
-                        //Ordena a lista
+                        //ORDENA LISTA
                         //lst.Sort();
                         //Console.WriteLine("A lista tem " + lst.Count + " itens:");
                         ////Imprime cada item da lista
                         //lst.ForEach(i => Console.WriteLine(i));
-                        Console.WriteLine("NOME:         CPF:");
-                        foreach (string alst in lst)
+                        //Console.WriteLine("NOME:         CPF:");
+                        //foreach (Cliente alst in lstCliente)
+                        //{
+                        //    Console.Write($"{alst} |  ");
+                        //}
+                        for (int i = 0; i < clientes.Count; i++)
                         {
-                            Console.Write($"{alst} |  ");
+                            Console.WriteLine(clientes[i]);
                         }
 
                         break;
