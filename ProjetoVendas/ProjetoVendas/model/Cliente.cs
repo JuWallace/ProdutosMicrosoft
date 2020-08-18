@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProjetoVendas
+namespace ProjetoVendas.model
 {
     class Cliente
     {

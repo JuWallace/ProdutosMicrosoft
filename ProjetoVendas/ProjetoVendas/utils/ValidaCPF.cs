@@ -4,9 +4,6 @@ using System.Text;
 
 namespace ProjetoVendas.model
 {
-	/// <summary>
-	/// Realiza a validação do CPF
-	/// </summary>
 	public static class ValidaCPF
 	{
 		public static bool IsCpf(string cpf)
@@ -52,7 +49,6 @@ namespace ProjetoVendas.model
 				digito = digito + resto.ToString();
 
 				return cpf.EndsWith(digito);
-		
 		}
 	}
 }

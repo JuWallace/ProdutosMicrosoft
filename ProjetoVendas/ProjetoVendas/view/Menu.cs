@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
+using System.Reflection.PortableExecutable;
 using System.Text;
 
-namespace ProjetoVendas
+namespace ProjetoVendas.view
 {
     class Menu
     {
         public static void ExecMenu()
         {
             int opcao;
-            Cliente c;
-            List<Cliente> clientes = new List<Cliente>(); 
+       
             do
             {
                 Console.Clear();
@@ -29,27 +30,19 @@ namespace ProjetoVendas
                 Console.WriteLine("9 - Listar Vendas por Cliente");
                 Console.WriteLine("0 - Sair");
                 Console.WriteLine("\nEscolha uma opção:");
-                    opcao = Convert.ToInt32(Console.ReadLine());
+                
+                opcao = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 switch (opcao)
                 {
                     case 1:
-                        c = new Cliente();
-                        Console.WriteLine("\t========================================\t");
-                        Console.WriteLine("\t|         Cadastro de Clientes         |\t");
-                        Console.WriteLine("\t========================================\t");
-                        Console.WriteLine();
+                        view.CadastrarCliente.ExecCadCliente();
 
-                       //Adiciona o item à lista
-                       Console.WriteLine("Digite o nome do Cliente: ");
-                       c.Nome = Console.ReadLine();
-                       Console.WriteLine("Digite o CPF do Cliente: ");
-                       c.Cpf = Console.ReadLine();
 
                         //VERIFICAÇÃO DO CPF
-                        if (model.ValidaCPF.IsCpf(c.Cpf))
+                        if (utils.ValidaCPF_diogo(c.Cpf))
                         {
-                            if(clientes.Count == 0)
+                            if (clientes.Count == 0)
                             {
                                 clientes.Add(c);
                                 Console.WriteLine("Cliente salvo com sucesso!");
@@ -74,7 +67,7 @@ namespace ProjetoVendas
                                 {
                                     if (clienteCadastrado.Cpf == c.Cpf)
                                     {
-                                        
+
                                         encontrado = true;
                                     }
                                 }
@@ -88,14 +81,18 @@ namespace ProjetoVendas
                                 {
                                     //Não permitir o cadastro
                                     Console.WriteLine("CPF já existente.");
-                                    
+
                                 }
-
-
                             }
-                            
                         }
-                            break;
+                        else
+                        {
+                            Console.WriteLine("cpf invalido");
+                        }
+                        break;
+                
+
+                        
                     case 2:
                         Console.WriteLine("\t========================================\t");
                         Console.WriteLine("\t|           Lista de Clientes          |\t");
@@ -152,6 +149,9 @@ namespace ProjetoVendas
                 Console.WriteLine("\nVolte sempre, aperte uma tecla para continuar...");
                 Console.ReadKey();
             } while (opcao != 0);
+
         }
+        
+        
     }
 }

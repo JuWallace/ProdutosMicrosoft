@@ -1,0 +1,9 @@
+Refatorar:
+
+[] Separar o projeto em camadas - MVC;
+[] Mover a Lista para uma camada DAO/DAL ou Repositório;
+[] Criar os Métodos de Manipulação da Lista;
+[] Separar cada CASE em uma nova classe de visualização;
+[] Separar o Método Validar CPF; UTIL
+[] Modular a validação do CPF;
+[] Modular o Cadastro do Cliente.

@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace ProjetoVendas
+namespace ProjetoVendas.view
 {
     class Program
     {
         static void Main(string[] args)
         {
             Menu.ExecMenu();
+
+
         }
     }
 }
