@@ -1,8 +1,5 @@
-﻿using Microsoft.VisualBasic.CompilerServices;
-using System;
-using System.Collections.Generic;
-using System.Reflection.PortableExecutable;
-using System.Text;
+﻿using System;
+
 
 namespace ProjetoVendas.view
 {
@@ -36,84 +33,10 @@ namespace ProjetoVendas.view
                 switch (opcao)
                 {
                     case 1:
-                        view.CadastrarCliente.ExecCadCliente();
-
-
-                        //VERIFICAÇÃO DO CPF
-                        if (utils.ValidaCPF_diogo(c.Cpf))
-                        {
-                            if (clientes.Count == 0)
-                            {
-                                clientes.Add(c);
-                                Console.WriteLine("Cliente salvo com sucesso!");
-                            }
-                            else
-                            {
-                                //for (int i = 0; i < clientes.Count; i++)
-                                //{
-                                //    if (clientes[i].Cpf == c.Cpf)
-                                //    {
-                                //        Console.WriteLine("CPF já existente.");
-                                //    }
-                                //    else
-                                //    {
-                                //        clientes.Add(c);
-                                //        Console.WriteLine("Cliente salvo com sucesso!");
-                                //    }
-                                //}
-
-                                bool encontrado = false;
-                                foreach (Cliente clienteCadastrado in clientes)
-                                {
-                                    if (clienteCadastrado.Cpf == c.Cpf)
-                                    {
-
-                                        encontrado = true;
-                                    }
-                                }
-                                if (!encontrado)
-                                {
-                                    //Permitir o cadastro
-                                    clientes.Add(c);
-                                    Console.WriteLine("Cliente salvo com sucesso!");
-                                }
-                                else
-                                {
-                                    //Não permitir o cadastro
-                                    Console.WriteLine("CPF já existente.");
-
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Console.WriteLine("cpf invalido");
-                        }
+                        CadastrarCliente.ExecCadastrarCliente();
                         break;
-                
-
-                        
                     case 2:
-                        Console.WriteLine("\t========================================\t");
-                        Console.WriteLine("\t|           Lista de Clientes          |\t");
-                        Console.WriteLine("\t========================================\t");
-                        Console.WriteLine();
-
-                        //ORDENA LISTA
-                        //lst.Sort();
-                        //Console.WriteLine("A lista tem " + lst.Count + " itens:");
-                        ////Imprime cada item da lista
-                        //lst.ForEach(i => Console.WriteLine(i));
-                        //Console.WriteLine("NOME:         CPF:");
-                        //foreach (Cliente alst in lstCliente)
-                        //{
-                        //    Console.Write($"{alst} |  ");
-                        //}
-                        for (int i = 0; i < clientes.Count; i++)
-                        {
-                            Console.WriteLine(clientes[i]);
-                        }
-
+                        ListarCliente.ExecListarClientes();
                         break;
                     //case 3:
                     //    Exercicio03.Exec03();

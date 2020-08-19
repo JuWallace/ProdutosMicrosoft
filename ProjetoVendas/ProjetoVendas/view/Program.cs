@@ -7,8 +7,6 @@ namespace ProjetoVendas.view
         static void Main(string[] args)
         {
             Menu.ExecMenu();
-
-
         }
     }
 }
