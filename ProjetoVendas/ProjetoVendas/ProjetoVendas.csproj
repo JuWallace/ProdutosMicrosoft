@@ -5,10 +5,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="view\Vendedor\" />
-    <Folder Include="view\Venda\" />
-    <Folder Include="view\Produto\" />
-  </ItemGroup>
-
 </Project>

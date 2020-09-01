@@ -1,5 +1,6 @@
-﻿using System;
-
+﻿using ProjetoVendas.dal;
+using ProjetoVendas.View;
+using System;
 
 namespace ProjetoVendas.view
 {
@@ -38,27 +39,30 @@ namespace ProjetoVendas.view
                     case 2:
                         ListarCliente.ExecListarClientes();
                         break;
-                    //case 3:
-                    //    Exercicio03.Exec03();
-                    //    break;
-                    //case 4:
-                    //    Exercicio04.Exec04();
-                    //    break;
-                    //case 5:
-                    //    Exercicio05.Exec05();
-                    //    break;
-                    //case 6:
-                    //    Exercicio06.Exec06();
-                    //    break;
-                    //case 7:
-                    //    Exercicio07.Exec07();
-                    //    break;
-                    //case 8:
-                    //    Exercicio08.Exec08();
-                    //    break;
-                    //case 9:
-                    //    Exercicio09.Exec09();
-                    //    break;
+                    case 3:
+                        CadatrarVendedor.ExecCadastrarVendedor();
+                        break;
+                    case 4:
+                        ListarVendedor.ExecListarVendedores();
+                        break;
+                    case 5:
+                        CadastrarProduto.ExecCadastrarProduto();
+                        break;
+                    case 6:
+                        ListarProduto.ExecListarProduto();
+                        break;
+                    case 7:
+                        CadastrarVenda.ExecCadastrarVenda();
+                        break;
+                    case 8:
+                        ListarVenda.ExecListarVenda(VendaDAO.Listar());
+                        break;
+                    case 9:
+                        Console.Clear();
+                        Console.WriteLine("Informe o CPF do Cliente:");
+                        string cpf = Console.ReadLine();
+                        ListarVenda.ExecListarVenda(VendaDAO.ListarVendasPorCliente(cpf));
+                        break;
                     case 0:
                         Console.Clear();
                         Console.WriteLine("Saindo...");

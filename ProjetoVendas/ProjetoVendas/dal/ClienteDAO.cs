@@ -6,8 +6,6 @@ namespace ProjetoVendas.Dal
 {
     class ClienteDAO
     {
-        private ClienteDAO() { }
-
         private static List<Cliente> clientes = new List<Cliente>();
 
      //PRIMEIRO DESENVOLVER O MÉTODO LISTAR
@@ -60,7 +58,6 @@ namespace ProjetoVendas.Dal
             {
                 clientes.Add(c);
                 return true;
-
             }
             return false;
         }

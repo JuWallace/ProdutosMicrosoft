@@ -1,18 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ProjetoVendas.model
 {
     class Cliente
     {
-        //CONSTRUTOR
-        public Cliente(string nome, string cpf)
-        {
-            Nome = nome;
-            Cpf = cpf;
-        }
-
+        //CONSTRUTOR VAZIO
         public Cliente()
         {
             CriadoEm = DateTime.Now;
@@ -27,7 +19,5 @@ namespace ProjetoVendas.model
         {
             return $"Nome: {Nome} | Cpf: {Cpf} | Criado em: {CriadoEm}";
         }
-
-
     }
 }
