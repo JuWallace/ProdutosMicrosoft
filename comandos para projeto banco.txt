@@ -1,0 +1,19 @@
+**Instalar o EntityFramework:
+Install-Package EntityFramework
+
+**Desinstalar o Entity
+Uninstall-Package EntityFramework
+
+Enable-Migrations //usar o -Force para atualizar parametros
+
+**Adicionar uma migração:
+Add-Migration   Nome
+
+Update-Database  -verbose
+
+
+CPF teste
+cliente  - 00000000191
+vendedor - 23454632447
+
+diogo.deconto@up.com.br
