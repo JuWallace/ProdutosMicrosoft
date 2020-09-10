@@ -20,11 +20,11 @@ namespace BancoDados.Views
             {
                 Console.WriteLine("\nNome: " + pessoa.Nome);
                 Console.WriteLine("E-Mail: " + pessoa.Email + "\n");
-                Console.WriteLine("Deseja realmente deletar esse registro?");
+                Console.WriteLine("Deseja realmente REMOVER esse registro? | [S]-Sim:[N]-Não");
                 if (Console.ReadLine().ToUpper().Equals("S"))
                 {
                     PessoaDAO.RemoverPessoa(pessoa);
-                    Console.WriteLine("Pessoa removida com sucesso!");
+                    Console.WriteLine("Pessoa REMOVIDA!");
                 }
                 else
                 {

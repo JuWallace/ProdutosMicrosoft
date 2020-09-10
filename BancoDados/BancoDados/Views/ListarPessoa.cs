@@ -16,6 +16,9 @@ namespace BancoDados.Views
             {
                 Console.WriteLine($"{pessoaCadastrada}");
             }
+
+
+
         }
     }
 }
