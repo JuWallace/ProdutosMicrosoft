@@ -14,10 +14,11 @@ namespace ProjetoVendas.view
             Console.WriteLine("\t========================================\t");
             Console.WriteLine();
 
-            foreach (Cliente clienteCadastrado in ClienteDAO.Listar())
+            foreach (Cliente clienteCadastrado in ClienteDAO.ListarCliente())
             {
                 Console.WriteLine($"{clienteCadastrado}");
             }
+
         }
     }
 }

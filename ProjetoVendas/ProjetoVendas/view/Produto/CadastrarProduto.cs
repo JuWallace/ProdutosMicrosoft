@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using ProjetoVendas.dal;
 using ProjetoVendas.model;
 
 namespace ProjetoVendas.view
 {
+    [Table("Produto")]
     class CadastrarProduto
     {
         public static void ExecCadastrarProduto()
@@ -22,7 +24,7 @@ namespace ProjetoVendas.view
             Console.WriteLine("Digite a Quantidade do Produto");
             p.QtdeProduto = Convert.ToInt32(Console.ReadLine());
 
-            if (ProdutoDAO.Cadastrar(p))
+            if (ProdutoDAO.CadastrarProduto(p))
             {
                 Console.WriteLine("Produto cadastrado!");
             }

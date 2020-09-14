@@ -14,7 +14,7 @@ namespace ProjetoVendas.View
             Console.WriteLine("\t========================================\t");
             Console.WriteLine();
 
-            foreach (Vendedor vendedorCadastrado in VendedorDAO.Listar())
+            foreach (Vendedor vendedorCadastrado in VendedorDAO.ListarVendedor())
             {
                 Console.WriteLine($"{vendedorCadastrado}");
             }

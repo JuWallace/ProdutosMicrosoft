@@ -1,14 +1,17 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using ProjetoVendas.Dal;
 using ProjetoVendas.model;
 
 
 namespace ProjetoVendas.view
 {
+    [Table("Cliente")]
     class CadastrarCliente
     {
         public static void ExecCadastrarCliente()
         {
+            Context ctx = new Context();
             Cliente c = new Cliente();
             Console.WriteLine("\t========================================\t");
             Console.WriteLine("\t|         Cadastro de Clientes         |\t");
@@ -24,7 +27,7 @@ namespace ProjetoVendas.view
             //VALIDAÇÃO DO CPF
             if (ValidaCPF.ValidarCPF(c.Cpf))
             {
-                if (ClienteDAO.Cadastrar(c))
+                if (ClienteDAO.CadastrarCliente(c))
                 {
                     Console.WriteLine("Cliente Cadastrado!");
                 }
@@ -37,6 +40,7 @@ namespace ProjetoVendas.view
             {
                 Console.WriteLine("CPF inválido.");
             }
+            //ctx.SaveChanges();
         }   
     }
 }

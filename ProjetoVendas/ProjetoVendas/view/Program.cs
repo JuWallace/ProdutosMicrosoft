@@ -8,7 +8,7 @@ namespace ProjetoVendas.View
     {
         static void Main(string[] args)
         {
-            DadosEntrada.Carregar();
+            //DadosEntrada.Carregar();
             Menu.ExecMenu();
         }
     }

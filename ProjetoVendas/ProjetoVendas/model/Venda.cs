@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.Text;
+using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoVendas.model
 {
@@ -15,6 +14,8 @@ namespace ProjetoVendas.model
             Itens = new List<ItemVenda>();
         }
 
+        //[Key]
+        //public int VendaId { get; set; }
         public Cliente Cliente { get; set; }
         public Vendedor Vendedor { get; set; }
         public List<ItemVenda> Itens { get; set; }

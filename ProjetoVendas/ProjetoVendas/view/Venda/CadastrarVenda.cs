@@ -26,7 +26,7 @@ namespace ProjetoVendas.view
             //Cliente
             Console.WriteLine("Digite o CPF do Cliente");
             c.Cpf = Console.ReadLine();
-            c = ClienteDAO.BuscarCliente(c.Cpf);
+            c = ClienteDAO.BuscarClientePorCPF(c.Cpf);
 
             if (c != null)
             {
@@ -35,7 +35,7 @@ namespace ProjetoVendas.view
                 //Vendedor
                 Console.WriteLine("Digite o CPF do Vendedor");
                 v.Cpf = Console.ReadLine();
-                v = VendedorDAO.BuscarVendedor(v.Cpf);
+                v = VendedorDAO.BuscarVendedorPorCpf(v.Cpf);
                 if (v != null)
                 {
                     venda.Vendedor = v;

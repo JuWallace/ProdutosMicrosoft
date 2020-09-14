@@ -55,7 +55,7 @@ namespace ProjetoVendas.view
                         CadastrarVenda.ExecCadastrarVenda();
                         break;
                     case 8:
-                        ListarVenda.ExecListarVenda(VendaDAO.Listar());
+                        ListarVenda.ExecListarVenda(VendaDAO.ListarVenda());
                         break;
                     case 9:
                         Console.Clear();
@@ -76,9 +76,6 @@ namespace ProjetoVendas.view
                 Console.WriteLine("\nVolte sempre, aperte uma tecla para continuar...");
                 Console.ReadKey();
             } while (opcao != 0);
-
         }
-        
-        
     }
 }

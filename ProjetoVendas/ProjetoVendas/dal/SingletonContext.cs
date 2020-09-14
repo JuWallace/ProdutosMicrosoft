@@ -1,14 +1,15 @@
-﻿using BancoDados.Models;
+﻿using ProjetoVendas.model;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BancoDados.Dal
+namespace ProjetoVendas.dal
 {
     class SingletonContext
     {
         private static Context ctx;
-        private SingletonContext(){  }
+
+        private SingletonContext() { }
 
         public static Context GetInstance()
         {

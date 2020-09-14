@@ -1,16 +1,20 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace BancoDados.Models
+
+namespace ProjetoVendas.model
 {
     class Context : DbContext
     {
-        //Mapear as classes que vão virar tabelas no banco de dados
-        public DbSet<Pessoa> Pessoas { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Vendedor> Vendedores { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+        //public DbSet<Venda> Vendas { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;
-                                          Database=dbBancoDados;
+                                          Database=dbVendas;
                                           Trusted_Connection=True");
 
         }

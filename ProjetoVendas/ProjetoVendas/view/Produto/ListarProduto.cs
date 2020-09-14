@@ -14,7 +14,7 @@ namespace ProjetoVendas.view
             Console.WriteLine("\t========================================\t");
             Console.WriteLine();
 
-            foreach (Produto produtoEncontrado in ProdutoDAO.Listar())
+            foreach (Produto produtoEncontrado in ProdutoDAO.ListarProduto())
             {
                 Console.WriteLine($"{produtoEncontrado}");
             }

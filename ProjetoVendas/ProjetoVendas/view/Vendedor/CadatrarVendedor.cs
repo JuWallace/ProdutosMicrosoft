@@ -1,10 +1,11 @@
 ﻿using ProjetoVendas.dal;
 using ProjetoVendas.model;
 using System;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoVendas.view
 {
+    [Table("Vendedor")]
     public class CadatrarVendedor
     {
         public static void ExecCadastrarVendedor()
@@ -24,7 +25,7 @@ namespace ProjetoVendas.view
             //VALIDAÇÃO DO CPF
             if (ValidaCPF.ValidarCPF(v.Cpf))
             {
-                if (VendedorDAO.Cadastrar(v))
+                if (VendedorDAO.CadastrarVendedor(v))
                 {
                     Console.WriteLine("Vendedor cadastrado!");
                 }
