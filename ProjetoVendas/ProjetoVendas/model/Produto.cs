@@ -17,9 +17,8 @@ namespace ProjetoVendas.model
         public int QtdeProduto { get; set; }
         public DateTime CriadoEm { get; set; }
 
-        public override string ToString()
-        {
-            return $"Nome: {Nome} | Quantidade: {QtdeProduto} | Preço: {Preco.ToString("F2", CultureInfo.InvariantCulture)} un | Criado em: {CriadoEm}.";
-        }
+        public override string ToString() => $"Nome: {Nome} | Quantidade: {QtdeProduto} | " +
+                                             $"Preço: {Preco.ToString("F2", CultureInfo.InvariantCulture)} un | " +
+                                             $"Criado em: {CriadoEm}.";
     }
 }

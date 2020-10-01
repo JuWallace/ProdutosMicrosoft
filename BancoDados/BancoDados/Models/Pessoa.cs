@@ -16,9 +16,9 @@ namespace BancoDados.Models
         public DateTime CriadoEm { get; set; }
 
 
-        public override string ToString()
-        {
-            return $"Nome: {Nome} | E-Mail: {Email} | Criado em: {CriadoEm}";
-        }
+        public override string ToString() => $"Nome: {Nome} | E-Mail: {Email} | Criado em: {CriadoEm}";
+        //{
+        //    return $"Nome: {Nome} | E-Mail: {Email} | Criado em: {CriadoEm}";
+        //}
     }
 }

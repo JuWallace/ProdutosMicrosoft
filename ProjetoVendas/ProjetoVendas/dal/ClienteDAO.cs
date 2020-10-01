@@ -8,19 +8,20 @@ namespace ProjetoVendas.Dal
 {
     class ClienteDAO
     {
-        private static Context ctx = SingletonContext.GetInstance();
-        private static List<Cliente> clientes = new List<Cliente>();
+        //private static Context ctx = SingletonContext.GetInstance();
+        //private static List<Cliente> clientes = new List<Cliente>();
+        private static Context ctx = new Context();
 
-     //PRIMEIRO DESENVOLVER O MÉTODO LISTAR
+        //PRIMEIRO DESENVOLVER O MÉTODO LISTAR
         //public static List<Cliente> ListarClientes()
         //{
         //    return clientes;
         //}
         //public static List<Cliente> Listar() => clientes;
-        public static List<Cliente> ListarCliente()
-        {
-            return ctx.Clientes.ToList();
-        }
+        public static List<Cliente> ListarCliente() => ctx.Clientes.ToList();
+        //{
+        //    return ctx.Clientes.ToList();
+        //}
 
      //SEGUNDO DESENVOLVER O MÉTODO BUSCAR
         //public static Cliente BuscarClienteCpf(Cliente c)
@@ -34,8 +35,8 @@ namespace ProjetoVendas.Dal
         //    }
         //    return null;
         //}
-        public static Cliente BuscarClientePorCPF(string cpf)
-        {
+        public static Cliente BuscarClientePorCPF(string cpf) => ctx.Clientes.FirstOrDefault(x => x.Cpf.Equals(cpf));
+        //{
             //foreach (Cliente clienteCadastrado in clientes)
             //{
             //    if (clienteCadastrado.Cpf == cpf)
@@ -46,8 +47,8 @@ namespace ProjetoVendas.Dal
             //return null;
             //FirstOrDefault busca apenas um objeto 
             //com base na expressão LAMBDA
-            return ctx.Clientes.FirstOrDefault(x => x.Cpf.Equals(cpf));
-        }
+           // return ctx.Clientes.FirstOrDefault(x => x.Cpf.Equals(cpf));
+        //}
 
      //TERCEIRO DESENVOLVER O MÉTODO CADASTRAR
         //public static bool CadastrarCliente(Cliente c)

@@ -6,7 +6,7 @@ namespace BancoDados.Views
     {
         static void Main(string[] args)
         {
-            int opcao;
+            int opcao = 15;
 
             do
             {
@@ -27,7 +27,17 @@ namespace BancoDados.Views
                 Console.WriteLine("0 - Sair");
                 Console.WriteLine("\nEscolha uma opção:");
 
-                opcao = Convert.ToInt32(Console.ReadLine());
+                try
+                {
+                    opcao = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("Insira apenas números.");
+                    Console.ReadLine();  
+                }
+
                 Console.Clear();
                 switch (opcao)
                 {

@@ -16,9 +16,6 @@ namespace ProjetoVendas.model
         public string Cpf { get; set; }
         public DateTime CriadoEm { get; set; }
 
-        public override string ToString()
-        {
-            return $"Nome: {Nome} | Cpf: {Cpf} | Criado em: {CriadoEm}";
-        }
+        public override string ToString() => $"Nome: {Nome} | Cpf: {Cpf} | Criado em: {CriadoEm}";
     }
 }

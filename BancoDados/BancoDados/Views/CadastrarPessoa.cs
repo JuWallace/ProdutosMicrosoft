@@ -33,7 +33,7 @@ namespace BancoDados.Views
             //Console.WriteLine("Pessoa cadastrada com sucesso!");
             //===================================================================================
 
-            Context ctx = new Context();
+            Context ctx = SingletonContext.GetInstance();
             Pessoa pessoa = new Pessoa();
             Console.Clear();
             Console.WriteLine(" --  CADASTRAR PESSOA -- \n");
