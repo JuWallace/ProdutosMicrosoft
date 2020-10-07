@@ -57,7 +57,6 @@ namespace VendasWPF.Views
             btnAlterar.IsEnabled = false;
             btnRemover.IsEnabled = false;
         }
-
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtNome.Text))
@@ -88,12 +87,10 @@ namespace VendasWPF.Views
                     MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
         {
             LimparFormulario();
         }
-
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
             if (produto != null)
