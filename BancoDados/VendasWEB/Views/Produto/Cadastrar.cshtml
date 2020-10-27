@@ -1,0 +1,38 @@
+﻿@*Tecnologia de View - Razor *@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    <form asp-action="Cadastrar" asp-controller="Produto" method="post">
+        <fieldset>
+            <legend>Cadastrar Produto</legend>
+
+            <label for="txtNome">Nome:</label>
+            <input name="txtNome" type="text" placeholder="nome do produto" /><br />
+
+            <label for="txtDescricao">Descrição:</label>
+            <input name="txtDescricao" type="text" placeholder="descrição do produto" /><br />
+
+            <label for="txtPreco">Preço:</label>
+            <input name="txtPreco" type="text" placeholder="preço do produto" /><br />
+
+            <label for="txtQuantidade">Quantidade:</label>
+            <input name="txtQuantidade" type="text" placeholder="quantidade do produto" /><br />
+
+        </fieldset>
+        <br />
+        <input type="submit" value="Cadastrar" />
+        <a asp-controller="Produto" asp-action="Index">Voltar</a>
+    </form>
+
+</body>
+</html>

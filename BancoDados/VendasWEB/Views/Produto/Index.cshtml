@@ -1,0 +1,61 @@
+﻿@*Tecnologia de View - Razor *@
+
+@{
+    //DateTime dataHora = ViewBag.DataHora;
+    List<Produto> listaProdutos = ViewBag.Produtos;
+
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Gerenciamento de Produtos</title>
+</head>
+<body>
+    <h2>Gerenciamento de Produtos</h2>
+    <a asp-controller="Produto" asp-action="Cadastrar">Cadastrar Produto</a>
+    <br /><br />
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+                <th>Preço</th>
+                <th>Criado em</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Produto produdoCadastrado in listaProdutos)
+            {
+                <tr>
+                    <td>@produdoCadastrado.Id</td>
+                    <td>@produdoCadastrado.Nome</td>
+                    <td>@produdoCadastrado.Descricao</td>
+                    <td>@produdoCadastrado.Quantidade</td>
+                    <td>@produdoCadastrado.Preco.ToString("C2")</td>
+                    <td>@produdoCadastrado.CriadoEm.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <a asp-controller="Produto"
+                           asp-action="Editar"
+                           asp-route-id="@produdoCadastrado.Id">Editar</a>
+                        <span>|</span>
+                    </td>
+                    <td>
+                        <a asp-controller="Produto"
+                           asp-action="Remover"
+                           asp-route-id="@produdoCadastrado.Id">Remover</a>
+
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br /><br />
+    <span>Quantidade de produtos: <b> @listaProdutos.Count</b></span><br />
+    <span>Dados Atualizados: <b>@DateTime.Now</b></span>
+
+</body>
+</html>

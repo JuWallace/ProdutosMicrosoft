@@ -4,7 +4,6 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\BancoDados.runtimeconfig.dev.json
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\BancoDados.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\BancoDados.pdb
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csprojAssemblyReference.cache
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.AssemblyInfoInputs.cache
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.AssemblyInfo.cs
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.dll

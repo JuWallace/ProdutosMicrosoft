@@ -1,0 +1,41 @@
+﻿@*Tecnologia de View - Razor *@
+@{
+    Layout = null;
+}
+@{ 
+    Produto produto = ViewBag.Produto;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar Produto</title>
+</head>
+<body>
+    <form asp-action="Editar" asp-controller="Produto" method="post">
+        <fieldset>
+            <legend>Editar Produto</legend>
+            <label for="txtId">Id:</label>
+            <input value="@produto.Id" readonly name="txtId" type="text" placeholder="Id" /><br />
+
+            <label for="txtNome">Nome:</label>
+            <input value="@produto.Nome" name="txtNome" type="text" placeholder="nome do produto" /><br />
+
+            <label for="txtDescricao">Descrição:</label>
+            <input value="@produto.Descricao" name="txtDescricao" type="text" placeholder="descrição do produto" /><br />
+
+            <label for="txtPreco">Preço:</label>
+            <input value="@produto.Preco" name="txtPreco" type="text" placeholder="preço do produto" /><br />
+
+            <label for="txtQuantidade">Quantidade:</label>
+            <input value="@produto.Quantidade" name="txtQuantidade" type="text" placeholder="quantidade do produto" /><br />
+
+        </fieldset>
+        <br />
+        <input type="submit" value="Salvar" />
+        <a asp-controller="Produto" asp-action="Index">Voltar</a>
+    </form>
+</body>
+</html>
