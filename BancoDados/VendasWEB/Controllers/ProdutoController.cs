@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.IO;
 using VendasWEB.Dal;
 using VendasWEB.Models;
 
@@ -7,65 +11,64 @@ namespace VendasWEB.Controllers
     public class ProdutoController : Controller
     {
         private readonly ProdutoDAO _produtoDAO;
+        private readonly IWebHostEnvironment _hosting;
 
-        public ProdutoController(ProdutoDAO produtoDAO) => _produtoDAO = produtoDAO;
+        public ProdutoController(ProdutoDAO produtoDAO, IWebHostEnvironment hosting)
+        {
+            _produtoDAO = produtoDAO;
+            _hosting = hosting;
+        }
 
         public IActionResult Index()
         {
-            ViewBag.Produtos = _produtoDAO.Listar();
-            return View();
+            return View(_produtoDAO.Listar());
         }
 
         public IActionResult Cadastrar() => View();
-        
-        //[HttpPost]
-        //public IActionResult Cadastrar(string txtNome,
-        //                               string txtDescricao,
-        //                               double txtPreco,
-        //                               int txtQuantidade)
-        //{
-        //    Produto produto = new Produto
-        //    {
-        //        Nome = txtNome,
-        //        Descricao = txtDescricao,
-        //        Preco = txtPreco,
-        //        Quantidade = txtQuantidade
-        //    };
 
-        //    _context.Produtos.Add(produto);
-        //    _context.SaveChanges();
-        //    return RedirectToAction("Index", "Produto");
-        //}
+        [HttpPost]
+        public IActionResult Cadastrar(Produto produto, IFormFile file)
+        {
+            if (ModelState.IsValid)
+            {
+                if(file != null)
+                {
 
-        //public IActionResult Remover(int id)
-        //{
-        //    _context.Produtos.Remove(_context.Produtos.Find(id));
-        //    _context.SaveChanges();
-        //    return RedirectToAction("Index", "Produto");
-        //}
+                    ///string arquivo = Path.GetFileName(file.FileName);
+                    string arquivo = $"{Guid.NewGuid()}{Path.GetExtension(file.FileName)}";
+                    string caminho = Path.Combine(_hosting.WebRootPath, "images", arquivo);
+                    file.CopyTo(new FileStream(caminho, FileMode.CreateNew));
+                    produto.Imagem = arquivo;
+                }
+                else
+                {
+                    produto.Imagem = "SemImagem.jpg";
+                }
 
-        //public IActionResult Editar(int id)
-        //{
-        //    ViewBag.Produto = _context.Produtos.Find(id);
-        //    return View();
-        //}
-        //[HttpPost]
-        //public IActionResult Editar(int txtid,
-        //                               string txtNome,
-        //                               string txtDescricao,
-        //                               double txtPreco,
-        //                               int txtQuantidade)
-        //{
-        //    Produto produto = _context.Produtos.Find(txtid);
-        //    {
-        //        produto.Nome = txtNome;
-        //        produto.Descricao = txtDescricao;
-        //        produto.Preco = txtPreco;
-        //        produto.Quantidade = txtQuantidade;
-        //    }
-        //    _context.Produtos.Update(produto);
-        //    _context.SaveChanges();
-        //    return RedirectToAction("Index", "Produto");
-        //}
+                if (_produtoDAO.Cadastrar(produto))
+                {
+                    return RedirectToAction("Index", "Produto");
+                }
+                ModelState.AddModelError("", "Já existe um Produto com este nome!");
+            }
+            return View();
+        }
+
+        public IActionResult Remover(int id)
+        {
+            _produtoDAO.Remover(id);
+            return RedirectToAction("Index", "Produto");
+        }
+
+        public IActionResult Editar(int Id)
+        {
+            return View(_produtoDAO.BuscarPorId(Id));
+        }
+        [HttpPost]
+        public IActionResult Editar(Produto produto)
+        {
+            _produtoDAO.Alterar(produto);
+            return RedirectToAction("Index", "Produto");
+        }
     }
 }

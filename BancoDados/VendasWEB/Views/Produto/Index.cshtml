@@ -1,20 +1,12 @@
 ﻿@*Tecnologia de View - Razor *@
 
-@{
-    //DateTime dataHora = ViewBag.DataHora;
-    List<Produto> listaProdutos = ViewBag.Produtos;
+@model List<Produto>
 
-}
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title>Gerenciamento de Produtos</title>
-</head>
-<body>
-    <h2>Gerenciamento de Produtos</h2>
-    <a asp-controller="Produto" asp-action="Cadastrar">Cadastrar Produto</a>
-    <br /><br />
-    <table>
+    <h2 class="espacamento-baixo">Gerenciamento de Produtos</h2>
+
+    <a asp-controller="Produto" class="btn btn-primary espacamento-baixo" asp-action="Cadastrar">Cadastrar Produto</a>
+
+    <table class="table table-hover table-striped espacamento-baixo">
         <thead>
             <tr>
                 <th>Id</th>
@@ -22,13 +14,14 @@
                 <th>Descrição</th>
                 <th>Quantidade</th>
                 <th>Preço</th>
+                <th>Imagem</th>
                 <th>Criado em</th>
                 <th></th>
                 <th></th>
             </tr>
         </thead>
-        <tbody>
-            @foreach (Produto produdoCadastrado in listaProdutos)
+        <tbody class="table-active">
+            @foreach (Produto produdoCadastrado in Model)
             {
                 <tr>
                     <td>@produdoCadastrado.Id</td>
@@ -36,26 +29,26 @@
                     <td>@produdoCadastrado.Descricao</td>
                     <td>@produdoCadastrado.Quantidade</td>
                     <td>@produdoCadastrado.Preco.ToString("C2")</td>
+                    <td>
+                        <img src="~/images/@produdoCadastrado.Imagem" alt="@produdoCadastrado.Descricao"
+                             style="width:120px;height:100px"/>
+                    </td> 
                     <td>@produdoCadastrado.CriadoEm.ToString("dd/MM/yyyy")</td>
                     <td>
                         <a asp-controller="Produto"
-                           asp-action="Editar"
-                           asp-route-id="@produdoCadastrado.Id">Editar</a>
-                        <span>|</span>
+                            asp-action="Editar"
+                            asp-route-id="@produdoCadastrado.Id">Editar</a>
                     </td>
                     <td>
                         <a asp-controller="Produto"
-                           asp-action="Remover"
-                           asp-route-id="@produdoCadastrado.Id">Remover</a>
+                            asp-action="Remover"
+                            asp-route-id="@produdoCadastrado.Id">Remover</a>
 
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <br /><br />
-    <span>Quantidade de produtos: <b> @listaProdutos.Count</b></span><br />
-    <span>Dados Atualizados: <b>@DateTime.Now</b></span>
 
-</body>
-</html>
+    <span>Quantidade de produtos: <b> @Model.Count</b></span><br />
+    <span>Dados Atualizados: <b>@DateTime.Now</b></span>
