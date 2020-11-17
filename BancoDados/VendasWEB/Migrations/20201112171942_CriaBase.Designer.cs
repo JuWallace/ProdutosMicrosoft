@@ -10,8 +10,8 @@ using VendasWEB.Models;
 namespace VendasWEB.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201022003240_CriaBancoInicial")]
-    partial class CriaBancoInicial
+    [Migration("20201112171942_CriaBase")]
+    partial class CriaBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace VendasWEB.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("VendasWEB.Models.Produto", b =>
+            modelBuilder.Entity("VendasWEB.Models.Categoria", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,6 +35,37 @@ namespace VendasWEB.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categorias");
+                });
+
+            modelBuilder.Entity("VendasWEB.Models.Produto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(100)")
+                        .HasMaxLength(100);
+
+                    b.Property<string>("Imagem")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<double>("Preco")
@@ -45,7 +76,18 @@ namespace VendasWEB.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoriaId");
+
                     b.ToTable("Produtos");
+                });
+
+            modelBuilder.Entity("VendasWEB.Models.Produto", b =>
+                {
+                    b.HasOne("VendasWEB.Models.Categoria", "Categoria")
+                        .WithMany("Produtos")
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

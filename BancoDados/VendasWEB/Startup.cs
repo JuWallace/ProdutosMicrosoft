@@ -22,7 +22,8 @@ namespace VendasWEB
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<ProdutoDAO>();
-            
+            services.AddScoped<CategoriaDAO>();
+
             //Cria string de conexão com o banco de dados.
             services.AddDbContext<Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("conectabd")));
@@ -51,7 +52,7 @@ namespace VendasWEB
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Produto}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

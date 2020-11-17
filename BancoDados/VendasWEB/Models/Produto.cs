@@ -21,8 +21,13 @@ namespace VendasWEB.Models
         [Required(ErrorMessage = "Campo Obrigatório!")]
         public int Quantidade { get; set; }
 
-
         public string Imagem { get; set; }
+        
+        public int CategoriaId { get; set; }
+        
+        [ForeignKey("CategoriaId")]
+        public Categoria Categoria { get; set; }
+        
 
     }
 }

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VendasWEB.Models;
 
@@ -21,7 +18,7 @@ namespace VendasWEB.Controllers
         // GET: Categoria
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Categoria.ToListAsync());
+            return View(await _context.Categorias.ToListAsync());
         }
 
         // GET: Categoria/Details/5
@@ -32,7 +29,7 @@ namespace VendasWEB.Controllers
                 return NotFound();
             }
 
-            var categoria = await _context.Categoria
+            var categoria = await _context.Categorias
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (categoria == null)
             {
@@ -72,7 +69,7 @@ namespace VendasWEB.Controllers
                 return NotFound();
             }
 
-            var categoria = await _context.Categoria.FindAsync(id);
+            var categoria = await _context.Categorias.FindAsync(id);
             if (categoria == null)
             {
                 return NotFound();
@@ -123,7 +120,7 @@ namespace VendasWEB.Controllers
                 return NotFound();
             }
 
-            var categoria = await _context.Categoria
+            var categoria = await _context.Categorias
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (categoria == null)
             {
@@ -138,15 +135,15 @@ namespace VendasWEB.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var categoria = await _context.Categoria.FindAsync(id);
-            _context.Categoria.Remove(categoria);
+            var categoria = await _context.Categorias.FindAsync(id);
+            _context.Categorias.Remove(categoria);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CategoriaExists(int id)
         {
-            return _context.Categoria.Any(e => e.Id == id);
+            return _context.Categorias.Any(e => e.Id == id);
         }
     }
 }

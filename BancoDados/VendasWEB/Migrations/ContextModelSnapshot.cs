@@ -48,6 +48,9 @@ namespace VendasWEB.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CategoriaId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
@@ -71,7 +74,18 @@ namespace VendasWEB.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoriaId");
+
                     b.ToTable("Produtos");
+                });
+
+            modelBuilder.Entity("VendasWEB.Models.Produto", b =>
+                {
+                    b.HasOne("VendasWEB.Models.Categoria", "Categoria")
+                        .WithMany("Produtos")
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
