@@ -22,7 +22,10 @@
         
         <span><b>Preço:</b>
             @produtoCadastrado.Preco.ToString("C2")
-        </span>
+        </span><br />
+        
+        <a class="btn btn-primary" asp-controller="Home" asp-action="AdicionarAoCarrinho"
+                  asp-route-id="@produtoCadastrado.Id">Adicionar</a>
     </div>
     }
 </div>

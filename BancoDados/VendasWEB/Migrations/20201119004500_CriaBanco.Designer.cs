@@ -10,8 +10,8 @@ using VendasWEB.Models;
 namespace VendasWEB.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20201112171942_CriaBase")]
-    partial class CriaBase
+    [Migration("20201119004500_CriaBanco")]
+    partial class CriaBanco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,6 +41,35 @@ namespace VendasWEB.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
+                });
+
+            modelBuilder.Entity("VendasWEB.Models.ItemVenda", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CarrinhoId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("Preco")
+                        .HasColumnType("float");
+
+                    b.Property<int>("ProdutoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProdutoId");
+
+                    b.ToTable("ItensVenda");
                 });
 
             modelBuilder.Entity("VendasWEB.Models.Produto", b =>
@@ -79,6 +108,15 @@ namespace VendasWEB.Migrations
                     b.HasIndex("CategoriaId");
 
                     b.ToTable("Produtos");
+                });
+
+            modelBuilder.Entity("VendasWEB.Models.ItemVenda", b =>
+                {
+                    b.HasOne("VendasWEB.Models.Produto", "Produto")
+                        .WithMany()
+                        .HasForeignKey("ProdutoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("VendasWEB.Models.Produto", b =>

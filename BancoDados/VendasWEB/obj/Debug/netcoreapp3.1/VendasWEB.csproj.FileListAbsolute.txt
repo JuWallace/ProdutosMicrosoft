@@ -143,7 +143,6 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\M
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Produto\Editar.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\VendasWEB.csprojAssemblyReference.cache
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
@@ -173,3 +172,5 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\R
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Edit.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Categoria\Index.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Home\CarrinhoCompras.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\VendasWEB.csprojAssemblyReference.cache

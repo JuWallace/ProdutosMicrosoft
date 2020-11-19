@@ -52,4 +52,3 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csproj.CopyComplete
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csproj.CoreCompileInputs.cache
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csprojAssemblyReference.cache
