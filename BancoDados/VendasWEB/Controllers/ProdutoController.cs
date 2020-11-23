@@ -27,10 +27,7 @@ namespace VendasWEB.Controllers
             _hosting = hosting;
         }
 
-        public IActionResult Index()
-        {
-            return View(_produtoDAO.Listar());
-        }
+        public IActionResult Index() => View(_produtoDAO.Listar());
 
         public IActionResult Cadastrar()
         {
