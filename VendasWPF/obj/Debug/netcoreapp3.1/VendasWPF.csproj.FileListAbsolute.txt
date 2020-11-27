@@ -4,8 +4,6 @@ D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\VendasWPF.ru
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\VendasWPF.runtimeconfig.dev.json
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\VendasWPF.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\VendasWPF.pdb
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -14,9 +12,7 @@ D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.En
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
@@ -34,13 +30,6 @@ D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\System.Colle
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\obj\Debug\netcoreapp3.1\Views\frmCadastrarProduto.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\obj\Debug\netcoreapp3.1\Views\frmCadastrarVenda.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\obj\Debug\netcoreapp3.1\Views\frmPrincipal.g.cs
@@ -59,3 +48,14 @@ D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\obj\Debug\netcoreapp3.1\VendasWPF.dl
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\obj\Debug\netcoreapp3.1\VendasWPF.pdb
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\obj\Debug\netcoreapp3.1\VendasWPF.genruntimeconfig.cache
 D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\obj\Debug\netcoreapp3.1\VendasWPF.csprojAssemblyReference.cache
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Repos_GitHub\ProdutosMicrosoft\VendasWPF\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll

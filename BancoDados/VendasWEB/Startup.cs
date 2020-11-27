@@ -26,6 +26,7 @@ namespace VendasWEB
             services.AddScoped<CategoriaDAO>();
             services.AddScoped<ItemVendaDAO>();
             services.AddScoped<Sessao>();
+
             services.AddHttpContextAccessor();
 
             //Cria string de conexão com o banco de dados.

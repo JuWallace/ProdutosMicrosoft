@@ -9,8 +9,6 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.pdb
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.genruntimeconfig.cache
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -18,9 +16,7 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
@@ -41,6 +37,15 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csproj.CopyComplete
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csproj.CoreCompileInputs.cache
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csprojAssemblyReference.cache
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
@@ -48,7 +53,3 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csproj.CopyComplete
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\BancoDados\obj\Debug\netcoreapp3.1\BancoDados.csproj.CoreCompileInputs.cache
