@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using ProjetoAgendaMedica_Web.Dal;
+using ProjetoAgendaMedica_Web.Models;
 
 namespace ProjetoAgendaMedica_Web
 {
@@ -22,6 +21,12 @@ namespace ProjetoAgendaMedica_Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<PacienteDAO>();
+            services.AddScoped<PlanoSaudeDAO>();
+
+            services.AddDbContext<Context>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("connection")));
+
             services.AddControllersWithViews();
         }
 

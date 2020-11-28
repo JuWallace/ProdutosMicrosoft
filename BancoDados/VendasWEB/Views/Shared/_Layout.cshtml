@@ -3,17 +3,18 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <!--<link href="~/lib/bootstrap/css/bootstrap.min_Cyber.css" rel="stylesheet" />-->
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <!-- As a link -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" asp-controller="Home" asp-route-id="0" asp-action="Index">E-commerce Noite</a>
-        <a class="navbar-brand" asp-controller="Produto" asp-route-id="0" asp-action="Index">Cadastrar Produto</a>
-        <a class="navbar-brand" asp-controller="Categoria" asp-route-id="0" asp-action="Index">Cadastrar Categoria</a>
+        <a class="navbar-brand" asp-controller="Home" asp-action="Index" asp-route-id="0">E-commerce Noite</a>
+        <a class="navbar-brand" asp-controller="Categoria" asp-action="Index" asp-route-id="0">Cadastrar Categoria</a>
+        <a class="navbar-brand" asp-controller="Produto" asp-action="Index" asp-route-id="0">Cadastrar Produto</a>
+        <a class="navbar-brand" asp-controller="Usuario" asp-action="Index" asp-route-id="0">Cadastrar Usuário</a>
 
     </nav>
 

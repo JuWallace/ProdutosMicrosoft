@@ -1,9 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoAgendaMedica_Web.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ProjetoAgendaMedica_Web.Dal
 {
@@ -12,8 +10,10 @@ namespace ProjetoAgendaMedica_Web.Dal
         private readonly Context _context;
         public PacienteDAO(Context context) => _context = context;
         public List<Paciente> Listar() =>
-            _context.Pacientes.ToList();
+            _context.Pacientes.Include(x => x.PlanoSaude).ToList();
+
         public Paciente BuscarPorId(int id) => _context.Pacientes.Find(id);
+
         public Paciente BuscarPorNome(string nome) =>
             _context.Pacientes.FirstOrDefault(x => x.Nome == nome);
         

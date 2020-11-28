@@ -22,6 +22,7 @@ namespace ProjetoAgendaMedica_Web.Models
         public Medico Medico { get; set; }
         public int MedicoId { get; set; }
 
+        public DateTime DataConsulta { get; set; }
         public DateTime HoraConsulta { get; set; }
 
     }

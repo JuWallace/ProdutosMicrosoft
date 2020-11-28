@@ -1,6 +1,5 @@
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\appsettings.json
-D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\VendasWEB.exe
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\VendasWEB.deps.json
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\VendasWEB.runtimeconfig.json
@@ -179,3 +178,9 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\r
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\scopedcss\bundle\VendasWEB.styles.css
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Create.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Delete.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Details.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edit.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs
