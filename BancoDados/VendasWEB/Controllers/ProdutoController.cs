@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -9,6 +10,7 @@ using VendasWEB.Models;
 
 namespace VendasWEB.Controllers
 {
+    [Authorize]
     public class ProdutoController : Controller
     {
         //https://getbootstrap.com/
@@ -27,8 +29,12 @@ namespace VendasWEB.Controllers
             _hosting = hosting;
         }
 
-        public IActionResult Index() => View(_produtoDAO.Listar());
-
+        //[AllowAnonymous]
+        public IActionResult Index()
+        {
+            ViewBag.Title = "Gerenciamento de Produtos";
+            return View(_produtoDAO.Listar());
+        }
         public IActionResult Cadastrar()
         {
             ViewBag.Categorias = new SelectList(_categoriaDAO.Listar(), "Id", "Nome");

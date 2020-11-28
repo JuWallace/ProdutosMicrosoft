@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<Usuario> SignInManager
+@inject Microsoft.AspNetCore.Identity.UserManager<Usuario> UserManager
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -16,6 +19,24 @@
         <a class="navbar-brand" asp-controller="Produto" asp-action="Index" asp-route-id="0">Cadastrar Produto</a>
         <a class="navbar-brand" asp-controller="Usuario" asp-action="Index" asp-route-id="0">Cadastrar Usuário</a>
 
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-controller="Usuario" asp-action="Logout">Logout</a>
+                    </li>
+                }
+                else
+                {
+                <li class="nav-item active">
+                    <a class="nav-link" asp-controller="Usuario" asp-action="Login">Login</a>
+                </li>
+                }
+
+            </ul>
+
+        </div>
     </nav>
 
     <div class="conteudo">

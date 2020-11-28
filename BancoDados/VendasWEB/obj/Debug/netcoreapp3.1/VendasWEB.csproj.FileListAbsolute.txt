@@ -184,3 +184,4 @@ D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\R
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Details.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edit.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\BancoDados\VendasWEB\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Login.cshtml.g.cs

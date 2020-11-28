@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,7 @@ namespace VendasWEB.Controllers
         }
 
         // GET: Usuario
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Usuarios.ToListAsync());
@@ -93,7 +95,22 @@ namespace VendasWEB.Controllers
         [HttpPost]
         public async Task<IActionResult> Login([Bind("Email, Senha")] UsuarioView usuarioview)
         {
-            return RedirectToAction("Index","Produto");
-        }  
+            var result = await _signInManager.PasswordSignInAsync(usuarioview.Email, usuarioview.Senha, false, false);
+            string name = _signInManager.Context.User.Identity.Name;
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index", "Produto");
+            }
+            ModelState.AddModelError("", "Login ou Senha inválido!");
+            return View(usuarioview);
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            
+            return RedirectToAction("Index", "Home");
+
+        }
     }
 }
