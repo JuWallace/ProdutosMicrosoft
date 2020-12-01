@@ -247,6 +247,15 @@ namespace VendasWEB.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cep")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -284,11 +293,17 @@ namespace VendasWEB.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Rua")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Uf")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(256)")
@@ -314,6 +329,15 @@ namespace VendasWEB.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cep")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
@@ -321,8 +345,14 @@ namespace VendasWEB.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Rua")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Senha")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Uf")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

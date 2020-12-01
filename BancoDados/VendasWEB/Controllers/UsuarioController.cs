@@ -64,7 +64,12 @@ namespace VendasWEB.Controllers
                 Usuario usuario = new Usuario
                 {
                     UserName = usuarioView.Email,
-                    Email = usuarioView.Email
+                    Email = usuarioView.Email,
+                    Cep = usuarioView.Cep,
+                    Rua = usuarioView.Rua,
+                    Bairro = usuarioView.Bairro,
+                    Cidade = usuarioView.Cidade,
+                    Uf = usuarioView.Uf
                 };
 
                 IdentityResult resultado = await _userManager.CreateAsync(usuario, usuarioView.Senha);

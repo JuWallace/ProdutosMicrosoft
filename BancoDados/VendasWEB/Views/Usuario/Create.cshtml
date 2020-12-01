@@ -3,7 +3,30 @@
 <form asp-action="Create">
     <fieldset>
         <legend>Dados de Endereço</legend>
+        <div class="form-group">
+            <label asp-for="Cep" class="control-label"></label>
+            <input id="cep" asp-for="Cep" class="form-control" />
+        </div>
         <button type="button" onclick="BuscarCep()" class="btn btn-primary">Buscar Endereço</button>
+
+        <div class="form-group">
+            <label asp-for="Rua" class="control-label"></label>
+            <input id="rua" asp-for="Rua" readonly class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Bairro" class="control-label"></label>
+            <input id="bairro" asp-for="Bairro" readonly class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Cidade" class="control-label"></label>
+            <input id="cidade" asp-for="Cidade" readonly class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Uf" class="control-label"></label>
+            <input id="uf" asp-for="Uf" readonly class="form-control" />
+        </div>
+
+
     </fieldset>
     <fieldset>
         <legend>Dados pessoais</legend>
@@ -30,13 +53,23 @@
 </form>
 
 <script>
-    var url = "https://viacep.com.br/ws/01001000/json/";
+    var txtCep = document.getElementById("cep");
+    var txtRua = document.getElementById("rua");
+    var txtBairro = document.getElementById("bairro");
+    var txtCidade = document.getElementById("cidade");
+    var txtUf = document.getElementById("uf");
+
+
     function BuscarCep() {
-    fetch(url, { method: "GET" })
+        var url = `https://viacep.com.br/ws/${txtCep.value}/json/`;
+
+        fetch(url, { method: "GET" })
         .then(response => response.json())
         .then(json => {
-            console.log(json);
-            console.log(json.logradouro);
+            txtRua.value = json.logradouro; 
+            txtBairro.value = json.bairro;
+            txtCidade.value = json.localidade;
+            txtUf.value = json.uf;
         })
         .catch(error => console.log(error));
 }</script>

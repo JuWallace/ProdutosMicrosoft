@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjetoAgendaMedica_Web.Models
 {
+    [Table("Consultas")]
     public class Consulta : BaseModel
     {
         public Consulta() 
