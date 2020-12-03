@@ -24,14 +24,14 @@
             <td>@planosaudeCadastrado.CriadoEm.ToString("dd/MM/yyyy")</td>
 
             <td>
-                <a asp-action="Remover"
-                   asp-controller="PlanoSaude"
+                <a asp-controller="PlanoSaude"
+                   asp-action="Remover"
                    asp-route-id="@planosaudeCadastrado.Id"
                    class="btn btn-danger">Remover</a>
             </td>
             <td>
-                <a asp-action="Alterar"
-                   asp-controller="PlanoSaude"
+                <a asp-controller="PlanoSaude"
+                   asp-action="Alterar"
                    asp-route-id="@planosaudeCadastrado.Id"
                    class="btn btn-warning">Alterar</a>
             </td>

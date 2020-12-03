@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoAgendaMedica_Web.Models
 {
-    public class UsuarioView : BaseModel
+    public class UsuarioView : Pessoa
     {
         [Display(Name = "E-mail")]
         [Required(ErrorMessage = "Campo obrigatório!")]
@@ -20,5 +20,6 @@ namespace ProjetoAgendaMedica_Web.Models
         [NotMapped]
         [Compare("Senha", ErrorMessage = "Campos não coincidem!")]
         public string ConfirmacaoSenha { get; set; }
+
     }
 }

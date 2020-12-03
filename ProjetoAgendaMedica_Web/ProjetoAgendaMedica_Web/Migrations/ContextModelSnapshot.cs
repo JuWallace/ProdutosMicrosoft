@@ -163,8 +163,8 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<DateTime>("DataConsulta")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("HoraConsulta")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("HoraConsulta")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("MedicoId")
                         .HasColumnType("int");
@@ -197,9 +197,6 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<string>("Cep")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Cidade")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Cpf")
                         .HasColumnType("nvarchar(max)");
 
@@ -212,7 +209,10 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<string>("Especialidade")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Estado")
+                    b.Property<string>("Localidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logradouro")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nascimento")
@@ -227,10 +227,10 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<string>("Rg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rua")
+                    b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Telefone")
+                    b.Property<string>("Uf")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -251,9 +251,6 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<string>("Cep")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Cidade")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Cpf")
                         .HasColumnType("nvarchar(max)");
 
@@ -263,7 +260,10 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Estado")
+                    b.Property<string>("Localidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logradouro")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nascimento")
@@ -281,10 +281,10 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<string>("Rg")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rua")
+                    b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Telefone")
+                    b.Property<string>("Uf")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -323,8 +323,17 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cep")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cpf")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CriadoEm")
@@ -337,11 +346,23 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Localidade")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Logradouro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nascimento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
@@ -350,6 +371,9 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
+
+                    b.Property<string>("Numero")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -360,11 +384,20 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Rg")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Uf")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(256)")
@@ -390,6 +423,15 @@ namespace ProjetoAgendaMedica_Web.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Bairro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cep")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Cpf")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
@@ -397,8 +439,32 @@ namespace ProjetoAgendaMedica_Web.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Localidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logradouro")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nascimento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Numero")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rg")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Senha")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Uf")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

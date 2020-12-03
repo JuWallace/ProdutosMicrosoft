@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using ProjetoAgendaMedica_Web.Dal;
 using ProjetoAgendaMedica_Web.Models;
 using System;
 using System.Collections.Generic;
@@ -13,15 +15,17 @@ namespace ProjetoAgendaMedica_Web.Controllers
     public class UsuarioController : Controller
     {
         private readonly Context _context;
+        private readonly UsuarioDAO _usuarioDAO;
         private readonly UserManager<Usuario> _userManager;
         private readonly SignInManager<Usuario> _signInManager;
 
         public UsuarioController(Context context, UserManager<Usuario> userManager,
-                                 SignInManager<Usuario> signInManager)
+                                 SignInManager<Usuario> signInManager, UsuarioDAO usuarioDAO)
         {
             _context = context;
             _userManager = userManager;
             _signInManager = signInManager;
+            _usuarioDAO = usuarioDAO;
         }
 
         // GET: Usuario
@@ -60,14 +64,32 @@ namespace ProjetoAgendaMedica_Web.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Email,Senha,Id,ConfirmacaoSenha")] UsuarioView usuarioView)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Cpf,Rg,Nascimento,Telefone,Email,Senha,ConfirmacaoSenha,Cep,Logradouro,Numero,Bairro,Localidade,Uf")] UsuarioView usuarioView)
         {
             if (ModelState.IsValid)
             {
                 Usuario usuario = new Usuario
                 {
+                    //UserName = usuarioView.Email,
+                    //Email = usuarioView.Email,
+                    //Cep = usuarioView.Cep,
+                    //Logradouro = usuarioView.Logradouro,
+                    //Bairro = usuarioView.Bairro,
+                    //Localidade = usuarioView.Localidade,
+                    //Uf = usuarioView.Uf
+                    Nome = usuarioView.Nome,
                     UserName = usuarioView.Email,
-                    Email = usuarioView.Email
+                    Email = usuarioView.Email,
+                    Cpf = usuarioView.Cpf,
+                    Rg = usuarioView.Rg,
+                    Nascimento = usuarioView.Nascimento,
+                    Telefone = usuarioView.Telefone,
+                    Cep = usuarioView.Cep,
+                    Logradouro = usuarioView.Logradouro,
+                    Numero = usuarioView.Numero,
+                    Bairro = usuarioView.Bairro,
+                    Localidade = usuarioView.Localidade,
+                    Uf = usuarioView.Uf
                 };
 
                 IdentityResult resultado = await _userManager.CreateAsync(usuario, usuarioView.Senha);
@@ -113,7 +135,18 @@ namespace ProjetoAgendaMedica_Web.Controllers
             await _signInManager.SignOutAsync();
 
             return RedirectToAction("Index", "Home");
+        }
 
+        public IActionResult Edit(int id)
+        {
+            ViewBag.Usuarios = new SelectList(_usuarioDAO.Listar(), "Id,Nome,Cpf,Rg,Nascimento,Telefone,Email,Senha,ConfirmacaoSenha,Cep,Logradouro,Numero,Bairro,Localidade,Uf");
+            return View(_usuarioDAO.BuscarPorId(id));
+        }
+        [HttpPost]
+        public IActionResult Edit(UsuarioView usuarioview)
+        {
+            _usuarioDAO.Editar(usuarioview);
+            return RedirectToAction("Index", "Usuario");
         }
     }
 }

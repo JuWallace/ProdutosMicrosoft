@@ -9,7 +9,7 @@ using ProjetoAgendaMedica_Web.Models;
 
 namespace ProjetoAgendaMedica_Web.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class MedicoController : Controller
     {
         private readonly MedicoDAO _medicoDAO;

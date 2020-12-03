@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VendasWEB.Models
 {
+    [Table("Usuarios")]
     public class UsuarioView : BaseModel
     {
         [Display(Name = "E-mail")]
@@ -25,15 +26,15 @@ namespace VendasWEB.Models
         public string Cep { get; set; }
 
         [Display(Name = "Rua")]
-        public string Rua { get; set; }
+        public string Logradouro { get; set; }
+
+        [Display(Name = "Cidade")]
+        public string Localidade { get; set; }
 
         [Display(Name = "Bairro")]
         public string Bairro { get; set; }
 
-        [Display(Name = "Cidade")]
-        public string Cidade { get; set; }
-
-        [Display(Name = "UF")]
+        [Display(Name = "Estado")]
         public string Uf { get; set; }
     }
 }

@@ -8,11 +8,14 @@ namespace ProjetoAgendaMedica_Web.Dal
     public class PacienteDAO
     {
         private readonly Context _context;
+
         public PacienteDAO(Context context) => _context = context;
+
         public List<Paciente> Listar() =>
             _context.Pacientes.Include(x => x.PlanoSaude).ToList();
 
-        public Paciente BuscarPorId(int id) => _context.Pacientes.Find(id);
+        public Paciente BuscarPorId(int id) => _context.Pacientes.Include(x => x.PlanoSaude)
+            .FirstOrDefault(x => x.Id == id);
 
         public Paciente BuscarPorNome(string nome) =>
             _context.Pacientes.FirstOrDefault(x => x.Nome == nome);

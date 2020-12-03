@@ -2,7 +2,7 @@
 
 @model PlanoSaude
 
-<form asp-action="Alterar" asp-controller="PlanoSaude" method="post">
+<form asp-controller="PlanoSaude" asp-action="Alterar" method="post">
     <fieldset>
         <legend>Alterar Plano de Saúde</legend>
 
@@ -16,16 +16,8 @@
         <label asp-for="Codigo">Código:</label>
         <input asp-for="Codigo" type="text" placeholder="Código do Plano" /><br />
 
-        @*<label asp-for="Fone">Fone:</label>
-        <input asp-for="Fone" type="text" placeholder="Fone do Médico" /><br />
 
-        <label asp-for="PlanoSaudeId">Plano de Saúde:</label>
-        <select class="form-control" asp-items="@ViewBag.PlanosSaude"
-                asp-for="PlanoSaudeId">
-            <option> -- SELECIONE -- </option>
-        </select>*@
-
-        <input type="submit" value="Salvar" />
+        <input type="submit" value="Alterar" />
     </fieldset>
 </form>
 

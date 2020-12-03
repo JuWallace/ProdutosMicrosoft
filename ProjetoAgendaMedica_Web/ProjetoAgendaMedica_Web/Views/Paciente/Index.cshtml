@@ -16,12 +16,6 @@
             <th>Telefone</th>
             <th>Email</th>
             <th>Plano</th>
-            <th>CEP</th>
-            <th>Rua</th>
-            <th>Numero</th>
-            <th>Bairro</th>
-            <th>Cidade</th>
-            <th>Estado</th>
             <th>Criado em</th>
 
         </tr>
@@ -38,25 +32,24 @@
             <td>@pacienteCadastrado.Telefone</td>
             <td>@pacienteCadastrado.Email</td>
             <td>@pacienteCadastrado.PlanoSaude.Plano - @pacienteCadastrado.PlanoSaude.Codigo</td>
-            <td>@pacienteCadastrado.Cep</td>
-            <td>@pacienteCadastrado.Rua</td>
-            <td>@pacienteCadastrado.Numero</td>
-            <td>@pacienteCadastrado.Bairro</td>
-            <td>@pacienteCadastrado.Cidade</td>
-            <td>@pacienteCadastrado.Estado</td>
-
             <td>@pacienteCadastrado.CriadoEm.ToString("dd/MM/yyyy")</td>
             <td>
-                <a asp-action="Remover"
-                   asp-controller="Paciente"
+                <a asp-controller="Paciente"
+                   asp-action="Remover"
                    asp-route-id="@pacienteCadastrado.Id"
                    class="btn btn-danger">Remover</a>
             </td>
             <td>
-                <a asp-action="Alterar"
-                   asp-controller="Paciente"
+                <a asp-controller="Paciente"
+                   asp-action="Alterar"
                    asp-route-id="@pacienteCadastrado.Id"
                    class="btn btn-warning">Alterar</a>
+            </td>
+            <td>
+                <a asp-controller="Paciente"
+                   asp-action="Agendar"
+                   asp-route-id="@pacienteCadastrado.Id"
+                   class="btn btn-primary">Agendar</a>
             </td>
         </tr>}
     </tbody>

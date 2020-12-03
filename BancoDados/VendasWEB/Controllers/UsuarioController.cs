@@ -57,7 +57,7 @@ namespace VendasWEB.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Email,Senha,Id,ConfirmacaoSenha")] UsuarioView usuarioView)
+        public async Task<IActionResult> Create([Bind("Id,Email,Senha,ConfirmacaoSenha,Cep,Logradouro,Bairro,Localidade,Uf")] UsuarioView usuarioView)
         {
             if (ModelState.IsValid)
             {
@@ -66,9 +66,9 @@ namespace VendasWEB.Controllers
                     UserName = usuarioView.Email,
                     Email = usuarioView.Email,
                     Cep = usuarioView.Cep,
-                    Rua = usuarioView.Rua,
+                    Logradouro = usuarioView.Logradouro,
                     Bairro = usuarioView.Bairro,
-                    Cidade = usuarioView.Cidade,
+                    Localidade = usuarioView.Localidade,
                     Uf = usuarioView.Uf
                 };
 

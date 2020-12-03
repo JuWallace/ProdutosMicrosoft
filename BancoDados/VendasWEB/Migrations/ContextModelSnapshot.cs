@@ -253,9 +253,6 @@ namespace VendasWEB.Migrations
                     b.Property<string>("Cep")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Cidade")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -270,11 +267,17 @@ namespace VendasWEB.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Localidade")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("Logradouro")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
@@ -292,9 +295,6 @@ namespace VendasWEB.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Rua")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
@@ -335,9 +335,6 @@ namespace VendasWEB.Migrations
                     b.Property<string>("Cep")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Cidade")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("CriadoEm")
                         .HasColumnType("datetime2");
 
@@ -345,7 +342,10 @@ namespace VendasWEB.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Rua")
+                    b.Property<string>("Localidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Logradouro")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Senha")

@@ -9,7 +9,7 @@ using ProjetoAgendaMedica_Web.Models;
 
 namespace ProjetoAgendaMedica_Web.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class PlanoSaudeController : Controller
     {
         private readonly PlanoSaudeDAO _planosaudeDAO;
@@ -38,7 +38,7 @@ namespace ProjetoAgendaMedica_Web.Controllers
             {                
                 if (_planosaudeDAO.Cadastrar(planosaude))
                 {
-                    return RedirectToAction("Index", "PanoSaude");
+                    return RedirectToAction("Index", "PlanoSaude");
                 }
                 ModelState.AddModelError("", "Já existe um Plano com o mesmo nome!");
             }

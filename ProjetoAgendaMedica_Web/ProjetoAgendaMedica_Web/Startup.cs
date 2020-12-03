@@ -22,9 +22,12 @@ namespace ProjetoAgendaMedica_Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<UsuarioDAO>();
             services.AddScoped<MedicoDAO>();
             services.AddScoped<PacienteDAO>();
             services.AddScoped<PlanoSaudeDAO>();
+            services.AddScoped<ConsultaDAO>();
+
 
             services.AddDbContext<Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("connection")));
