@@ -63,6 +63,7 @@ namespace ProjetoAgendaMedica_Web.Controllers
             _pacienteDAO.Remover(id);
             return RedirectToAction("Index", "Paciente");
         }
+
         public IActionResult Alterar(int id)
         {
             ViewBag.PlanosSaude = new SelectList(_planosaudeDAO.Listar(), "Id", "Plano", "Codigo");
@@ -86,9 +87,7 @@ namespace ProjetoAgendaMedica_Web.Controllers
         public IActionResult Agendar(Paciente paciente)
         {   
             ViewBag.Title = "Agendar";
-            //string carrinhoId = _sessao.BuscarCarrinhoId();
-            //ViewBag.Total = _itemvendaDAO.SomarTotalCarrinho(carrinhoId);
-            return RedirectToAction("Index", "Consulta",new { p = paciente.Id });
+            return RedirectToAction("Agendar", "Consulta",new { p = paciente.Id });
         }
     }
 }

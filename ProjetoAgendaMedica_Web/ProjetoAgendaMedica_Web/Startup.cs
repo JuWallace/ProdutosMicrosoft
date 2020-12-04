@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ProjetoAgendaMedica_Web.Dal;
 using ProjetoAgendaMedica_Web.Models;
+using ProjetoAgendaMedica_Web.Utils;
 
 namespace ProjetoAgendaMedica_Web
 {
@@ -28,6 +29,7 @@ namespace ProjetoAgendaMedica_Web
             services.AddScoped<PlanoSaudeDAO>();
             services.AddScoped<ConsultaDAO>();
 
+            services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddDbContext<Context>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("connection")));

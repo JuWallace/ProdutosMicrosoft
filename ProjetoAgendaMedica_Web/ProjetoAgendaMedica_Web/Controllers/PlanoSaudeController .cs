@@ -9,7 +9,6 @@ using ProjetoAgendaMedica_Web.Models;
 
 namespace ProjetoAgendaMedica_Web.Controllers
 {
-    [Authorize]
     public class PlanoSaudeController : Controller
     {
         private readonly PlanoSaudeDAO _planosaudeDAO;
@@ -25,6 +24,8 @@ namespace ProjetoAgendaMedica_Web.Controllers
             ViewBag.Title = "Gerenciamento de Planos de Saúde";
             return View(_planosaudeDAO.Listar());
         }
+
+        [Authorize]
         public IActionResult Cadastrar()
         {
             ViewBag.PlanosSaude = new SelectList(_planosaudeDAO.Listar(), "Id", "Plano", "Codigo");
@@ -45,11 +46,15 @@ namespace ProjetoAgendaMedica_Web.Controllers
             ViewBag.PlanosSaude = new SelectList(_planosaudeDAO.Listar(), "Id", "Plano", "Codigo");
             return View(planosaude);
         }
+
+        [Authorize]
         public IActionResult Remover(int id)
         {
             _planosaudeDAO.Remover(id);
             return RedirectToAction("Index", "PlanoSaude");
         }
+
+        [Authorize]
         public IActionResult Alterar(int id)
         {
             ViewBag.PlanosSaude = new SelectList(_planosaudeDAO.Listar(), "Id", "Plano", "Codigo");
