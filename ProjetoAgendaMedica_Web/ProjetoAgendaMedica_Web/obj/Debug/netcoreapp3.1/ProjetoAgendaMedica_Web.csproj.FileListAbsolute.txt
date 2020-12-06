@@ -167,6 +167,11 @@ D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_We
 D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Edit.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\bin\Debug\netcoreapp3.1\SendGrid.dll
 D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
-D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\obj\Debug\netcoreapp3.1\ProjetoAgendaMedica_Web.csprojAssemblyReference.cache
 D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\obj\Debug\netcoreapp3.1\Razor\Views\Consulta\Agendar.cshtml.g.cs
 D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\obj\Debug\netcoreapp3.1\Razor\Views\Consulta\Alterar.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\obj\Debug\netcoreapp3.1\Razor\Views\Prontuario\Cadastrar.cshtml.g.cs
+D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\obj\Debug\netcoreapp3.1\ProjetoAgendaMedica_Web.csprojAssemblyReference.cache
+D:\Repos_GitHub\ProdutosMicrosoft\ProjetoAgendaMedica_Web\ProjetoAgendaMedica_Web\obj\Debug\netcoreapp3.1\Razor\Views\Receituario\Index.cshtml.g.cs

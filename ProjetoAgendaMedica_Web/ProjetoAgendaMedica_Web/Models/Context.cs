@@ -15,5 +15,7 @@ namespace ProjetoAgendaMedica_Web.Models
         public DbSet<Consulta> Consultas { get; set; }
         public DbSet<PlanoSaude> PlanosSaude { get; set; }
         public DbSet<UsuarioView> Usuarios { get; set; }
+        public DbSet<Prontuario> Prontuarios { get; set; }
+
     }
 }

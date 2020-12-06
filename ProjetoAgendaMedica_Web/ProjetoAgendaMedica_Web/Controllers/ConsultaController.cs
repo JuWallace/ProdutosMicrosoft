@@ -89,13 +89,21 @@ namespace ProjetoAgendaMedica_Web.Controllers
             if (id != 0)
             {
                 var consulta = _consultaDAO.BuscarPorId(id);
-                ViewBag.DtaConsulta = consulta.DataConsulta.ToString("dd/MM/yyyy");
-                ViewBag.HraConsulta = new SelectList(_consultaDAO.Listar(),"Id","HoraConsulta");
-                ViewBag.PacienteId = consulta.Id;
-                ViewBag.PacienteNome = consulta.PacienteId;
+                ViewBag.DataConsulta = consulta.DataConsulta;
+                ViewBag.HoraConsulta = consulta.HoraConsulta;
+                ViewBag.PacienteNome = consulta.Paciente.Nome;
+                ViewBag.PacienteId = consulta.PacienteId;
+                ViewBag.Horas = new SelectList(new List<string>( new string[] 
+                {"09:00", "09:20", "09:40", "10:00", "10:20"}
+                ), consulta.HoraConsulta.Trim());
+                //ViewBag.DtaConsulta = consulta.DataConsulta;
+                //ViewBag.HraConsulta = consulta.HoraConsulta;
+                //ViewBag.PacienteId = consulta.PacienteId;
+                //ViewBag.PacienteNome = consulta.Paciente.Nome;
                 ViewBag.Medicos = new SelectList(_medicoDAO.Listar(), "Id","Nome");
+                //ViewBag.MedicoId = consulta.MedicoId;
 
-                return View();
+                return View(consulta);
             }
             else
             {
@@ -103,12 +111,52 @@ namespace ProjetoAgendaMedica_Web.Controllers
             }
         }
         [HttpPost]
-        public IActionResult Alterar(Consulta consulta)
+        public async Task<IActionResult> Alterar(Consulta consulta)
         {
-            _consultaDAO.Alterar(consulta);
+            if (ModelState.IsValid)
+            {
+                var paciente = _pacienteDAO.BuscarPorId(consulta.PacienteId);
+                consulta.Paciente = paciente;
+                var medico = _medicoDAO.BuscarPorId(consulta.MedicoId);
+                consulta.Medico = medico;
+
+                string resposta = _consultaDAO.Alterar(consulta);
+
+                if (resposta.Length > 0)
+                {
+                    ModelState.AddModelError("", resposta);
+                }
+                else
+                {
+                    var data = consulta.DataConsulta.ToString("dd/MM/yyyy");
+                    var emails = new List<string>();
+                    string message = "Olá sr(a). " + paciente.Nome + ", sua consulta foi reagendada para dia " + data + " ás " + consulta.HoraConsulta + " !";
+                    string assunto = "Re-Confirmação de Consulta !";
+                    EmailModel novoEmail = new EmailModel() { Email = paciente.Email, Message = message, Subject = assunto };
+                    emails.Add(novoEmail.Email);
+                    await _emailSender.SendEmailAsync(emails, novoEmail.Subject, novoEmail.Message);
+
+                    ViewBag.msgSucesso = "Reagendadamento concluído!";
+                }
+
+            }
             return RedirectToAction("Index", "Consulta");
+            //return View();
         }
 
+        public IActionResult CriarProntuario(int id)
+        {
+            Consulta consulta = _consultaDAO.BuscarPorId(id);
+
+            return RedirectToAction("Prontuario", new { consulta });
+        }
+
+        [HttpGet]
+        public IActionResult Prontuario(Consulta consulta)
+        {
+            ViewBag.Title = "Prontuário";
+            return RedirectToAction("Cadastrar", "Prontuario", new { p = consulta.Id });
+        }
 
     }
 }

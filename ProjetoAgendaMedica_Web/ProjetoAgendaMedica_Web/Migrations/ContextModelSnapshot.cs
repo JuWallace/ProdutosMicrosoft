@@ -315,6 +315,46 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.ToTable("PlanosSaude");
                 });
 
+            modelBuilder.Entity("ProjetoAgendaMedica_Web.Models.Prontuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Avaliacao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CriadoEm")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataConsulta")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Medicamento")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("MedicoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PacienteId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PlanoSaude")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sintomas")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MedicoId");
+
+                    b.HasIndex("PacienteId");
+
+                    b.ToTable("Prontuarios");
+                });
+
             modelBuilder.Entity("ProjetoAgendaMedica_Web.Models.Usuario", b =>
                 {
                     b.Property<string>("Id")
@@ -543,6 +583,21 @@ namespace ProjetoAgendaMedica_Web.Migrations
                     b.HasOne("ProjetoAgendaMedica_Web.Models.PlanoSaude", "PlanoSaude")
                         .WithMany()
                         .HasForeignKey("PlanoSaudeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ProjetoAgendaMedica_Web.Models.Prontuario", b =>
+                {
+                    b.HasOne("ProjetoAgendaMedica_Web.Models.Medico", "Medico")
+                        .WithMany()
+                        .HasForeignKey("MedicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoAgendaMedica_Web.Models.Paciente", "Paciente")
+                        .WithMany()
+                        .HasForeignKey("PacienteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

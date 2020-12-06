@@ -1,0 +1,36 @@
+﻿@*Tecnologia da página - Razor*@
+@model Prontuario
+
+<fieldset>
+    <legend>Receituário - Imprimir</legend>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-3">
+                    <label>Data: @ViewBag.DtaConsulta</label>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-3">
+                    <label>Paciente: @ViewBag.PacienteNome</label>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-3">
+                <label>Medicamento: @Model.Medicamento</label>
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-2">
+                    
+                <button class="btn btn-info" onclick="window.print()">Imprimir</button>
+
+            </div>
+        </div>
+
+    </div>
+</fieldset>
+
+

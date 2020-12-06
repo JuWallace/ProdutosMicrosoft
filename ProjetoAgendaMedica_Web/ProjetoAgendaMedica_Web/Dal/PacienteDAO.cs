@@ -19,7 +19,10 @@ namespace ProjetoAgendaMedica_Web.Dal
 
         public Paciente BuscarPorNome(string nome) =>
             _context.Pacientes.FirstOrDefault(x => x.Nome == nome);
-        
+
+        public Paciente BuscarPorCpf(string cpf) =>
+            _context.Pacientes.FirstOrDefault(x => x.Cpf == cpf);
+
         public bool Cadastrar(Paciente paciente)
         {
             if (BuscarPorNome(paciente.Nome) == null)

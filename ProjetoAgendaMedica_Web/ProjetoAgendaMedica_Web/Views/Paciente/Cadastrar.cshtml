@@ -11,7 +11,7 @@
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="Cpf">CPF:</label>
-                        <input asp-for="Cpf" class="form-control" id="cpf" type="text" />
+                        <input asp-for="Cpf" class="form-control" id="cpf" type="text" autofocus />
                         <span class="text-danger" asp-validation-for="Cpf"></span>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
             <div class="row justify-content-left">
                 <div class="col-2">
                     <div class="form-group">
-                        <button type="button" onclick="BuscarCep()" class="btn btn-primary">Buscar</button>
+                        <button type="button" onclick="BuscarCpf()" class="btn btn-primary">Buscar</button>
                     </div>
                 </div>
                 <div class="col-2">
@@ -61,7 +61,7 @@
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="PlanoSaudeId">Plano de Saúde:</label>
-                        <select class="form-control" asp-items="@ViewBag.PlanosSaude"
+                        <select class="form-control" asp-items="@ViewBag.PlanosSaude" id="planosaude"
                                 asp-for="PlanoSaudeId">
                             <option>  SELECIONE  </option>
                         </select>
@@ -101,7 +101,7 @@
                 <div class="col-2">
                     <div class="form-group">
                         <label asp-for="Numero" class="control-label">Nº:</label>
-                        <input asp-for="Numero" class="form-control" id="Numero" />
+                        <input asp-for="Numero" class="form-control" id="numero" />
                     </div>
                 </div>
                 <div class="col-3">
@@ -153,6 +153,45 @@
                 txtUf.value = json.uf;
             })
             .catch(error => console.log(error));
+    }
+
+    function BuscarCpf() {
+        var txtCpf = document.getElementById("cpf");
+        var txtNome = document.getElementById("nome");
+        var txtEmail = document.getElementById("email");
+        var txtDtaNascimento = document.getElementById("nascimento");
+        var txtRg = document.getElementById("rg");
+        var txtTelefone = document.getElementById("telefone");
+        var txtPlanoSaude = document.getElementById("planosaude");
+        var txtCep = document.getElementById("cep");
+        var txtLogradouro = document.getElementById("logradouro");
+        var txtNumero = document.getElementById("numero");
+        var txtBairro = document.getElementById("bairro");
+        var txtLocalidade = document.getElementById("localidade");
+        var txtUf = document.getElementById("uf");
+
+
+        var url = `http://localhost:54131/api/Consulta/Buscar/${txtCpf.value}`;
+
+        fetch(url, { method: "GET" })
+            .then(response => response.json())
+            .then(json => {
+                console.log("jsonPaciente", json);
+                txtNome.value = json.nome;
+                txtEmail.value = json.email;
+                txtDtaNascimento.value = json.nascimento;
+                txtRg.value = json.rg;
+                txtTelefone.value = json.telefone;
+                txtPlanoSaude.value = json.planoSaudeId;
+                txtCep.value = json.cep;
+                txtLogradouro.value = json.logradouro;
+                txtNumero.value = json.numero;
+                txtBairro.value = json.bairro;
+                txtLocalidade.value = json.localidade;
+                txtUf.value = json.uf;
+            })
+            .catch(error => console.log(error));
+        
     }
 
 </script>

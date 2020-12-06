@@ -28,6 +28,7 @@ namespace ProjetoAgendaMedica_Web
             services.AddScoped<PacienteDAO>();
             services.AddScoped<PlanoSaudeDAO>();
             services.AddScoped<ConsultaDAO>();
+            services.AddScoped<ProntuarioDAO>();
 
             services.AddTransient<IEmailSender, EmailSender>();
 
@@ -44,7 +45,10 @@ namespace ProjetoAgendaMedica_Web
                 options.AccessDeniedPath = "/Usuario/AcessoNegado";
             });
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson(
+                options => options.SerializerSettings.ReferenceLoopHandling =
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

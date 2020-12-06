@@ -23,6 +23,13 @@ namespace VendasWEB
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+                options.CheckConsentNeeded = context => false;
+            });
+
             services.AddScoped<ProdutoDAO>();
             services.AddScoped<CategoriaDAO>();
             services.AddScoped<ItemVendaDAO>();
@@ -31,8 +38,9 @@ namespace VendasWEB
             services.AddHttpContextAccessor();
 
             //Cria string de conexão com o banco de dados.
-            services.AddDbContext<Context>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("conectabd")));
+            services.AddDbContext<Context>
+                (options => options.UseSqlServer(
+                    Configuration.GetConnectionString("conectabd")));
 
             services.AddIdentity<Usuario, IdentityRole>()
                 .AddEntityFrameworkStores<Context>()
@@ -45,7 +53,10 @@ namespace VendasWEB
             });
 
             services.AddSession();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddNewtonsoftJson(
+                options => options.SerializerSettings.ReferenceLoopHandling = 
+                Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

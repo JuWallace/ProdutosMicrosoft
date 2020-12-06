@@ -9,9 +9,12 @@ namespace VendasWEB.Dal
     {
         private readonly Context _context;
         public ProdutoDAO(Context context) => _context = context;
+
         public List<Produto> Listar() => _context.Produtos
             .Include(x => x.Categoria).ToList();
+
         public Produto BuscarPorId(int id) => _context.Produtos.Find(id);
+
         public Produto BuscarPorNome(string nome) => _context.Produtos
             .FirstOrDefault(x => x.Nome.Equals(nome));
 
@@ -31,10 +34,22 @@ namespace VendasWEB.Dal
             _context.Produtos.Remove(BuscarPorId(id));
             _context.SaveChanges();
         }
-        public void Alterar(Produto produto)
+        public bool Alterar(Produto produto)
         {
-            _context.Produtos.Update(produto);
-            _context.SaveChanges();
+
+            if(BuscarPorId(produto.Id) != null)
+            {
+                Produto p = _context.Produtos.First(x => x.Id == produto.Id);
+                p.Nome = produto.Nome;
+                p.Preco = produto.Preco;
+                p.Categoria.Nome = produto.Categoria.Nome;
+                _context.Update(p);
+                _context.SaveChanges();
+                //(_context.Produtos.First(x => x.Id == produto.Id)).Update(produto);
+                //_context.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

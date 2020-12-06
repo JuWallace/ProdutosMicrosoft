@@ -1,6 +1,8 @@
 ﻿@*Tecnologia da página - Razor*@
 @model Consulta
 
+@using (Html.BeginForm())
+{
 <form asp-controller="Consulta" asp-action="Editar" method="post" enctype="multipart/form-data">
     <fieldset>
         <legend>Selecionar Data - REAGENDAR</legend>
@@ -11,17 +13,15 @@
                     <div class="form-group">
                         <label asp-for="DataConsulta">Data:</label>
                         <input class="form-control" asp-for="DataConsulta" type="date"
-                               value="@ViewBag.DtaConsulta" disabled="@ViewBag.msgSucesso" />
+                               value="@ViewBag.DataConsulta" disabled="@ViewBag.msgSucesso" />
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="form-group">
+
                         <label asp-for="HoraConsulta">Hora:</label>
-                        <select class="form-control" asp-for="HoraConsulta" asp-items="@ViewBag.HraConsulta"
-                                disabled="@ViewBag.msgSucesso">
-                            <option>  SELECIONE </option>
-                            
-                        </select>
+                        @Html.DropDownListFor(m => m.HoraConsulta, (SelectList)ViewBag.Horas, "SELECIONE", new { @class = "form-control" })
+                        
                     </div>
 
                 </div>
@@ -32,17 +32,19 @@
                     <div class="form-group text-left">
                         <label>Paciente</label>
                         <input class="form-control" asp-for="PacienteId" value="@ViewBag.PacienteId" hidden />
-                        <input class="form-control" value="@ViewBag.PacienteNome" disabled />
+                        <input class="form-control" asp-for="Paciente.Nome" value="@ViewBag.PacienteNome" disabled />
                     </div>
                 </div>
 
                 <div class="col-3">
                     <div class="form-group text-left">
+
                         <label asp-for="MedicoId">Médico:</label>
                         <select class="form-control" asp-for="MedicoId" asp-items="@ViewBag.Medicos"
                                 disabled="@ViewBag.msgSucesso">
                             <option>  SELECIONE  </option>
                         </select>
+
                     </div>
                 </div>
             </div>
@@ -67,3 +69,4 @@
     </fieldset>
 </form>
 
+}
