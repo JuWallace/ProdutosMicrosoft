@@ -21,8 +21,8 @@ namespace ProjetoAgendaMedica_Web.Dal
             _context.Consultas.FirstOrDefault(x => x.PacienteId == PacienteId &&
                                               x.MedicoId == MedicoId && x.HoraConsulta == Hora);
 
-        public List<Consulta> ListarPorMedico(int id) =>
-            _context.Consultas.Where(x => x.MedicoId == id).ToList();
+        public List<Consulta> ListarPorMedico(int id, DateTime dtacons) =>
+            _context.Consultas.Where(m => m.MedicoId == id && m.DataConsulta == dtacons).ToList();
 
         public string Cadastrar(Consulta consulta)
         {

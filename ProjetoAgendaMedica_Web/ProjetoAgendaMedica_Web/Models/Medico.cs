@@ -12,5 +12,8 @@ namespace ProjetoAgendaMedica_Web.Models
         public string CRM { get; set; }
         public string Especialidade { get; set; }
 
+        [NotMapped]
+        public DateTime dtaconsulta { get; set; }
+
     }
 }

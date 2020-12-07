@@ -29,10 +29,11 @@ namespace ProjetoAgendaMedica_Web.Controllers
             _emailSender = emailSender;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             //List<Consulta> consultas = _consultaDAO.Listar();
             ViewBag.Medicos = new SelectList(_medicoDAO.Listar(), "Id", "Nome");
+            //ViewBag.DataSelec = 
             ViewBag.Consultas = new List<Consulta>();
             ViewBag.Count = 0;
             return View();
@@ -45,7 +46,9 @@ namespace ProjetoAgendaMedica_Web.Controllers
             {
                 if (medico.Id != 0)
                 {
-                    List<Consulta> consultas = _consultaDAO.ListarPorMedico(medico.Id);
+                    
+                    List<Consulta> consultas = _consultaDAO.ListarPorMedico(medico.Id, medico.dtaconsulta);
+                    //ViewBag.dtacons = consulta.DataConsulta;
                     ViewBag.Consultas = consultas;
                     ViewBag.Count = consultas.Count;
                     ViewBag.Medicos = new SelectList(_medicoDAO.Listar(), "Id", "Nome");

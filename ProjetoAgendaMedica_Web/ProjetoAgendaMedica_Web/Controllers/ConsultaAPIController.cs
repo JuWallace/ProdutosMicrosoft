@@ -32,18 +32,18 @@ namespace ProjetoAgendaMedica_Web.Controllers
             return BadRequest(new { msg = "A lista de consultas está vazia!" });
         }
 
-        //GET: /api/Consulta/AgendaMedica
-        [HttpGet]
-        [Route("AgendaMedica/{id}")]
-        public IActionResult AgendaMedica(int id)
-        {
-            List<Consulta> consultas = _consultaDAO.ListarPorMedico(id);
-            if (consultas.Count > 0)
-            {
-                return Ok(consultas);
-            }
-            return BadRequest(new { msg = "A lista de consultas está vazia!" });
-        }
+        ////GET: /api/Consulta/AgendaMedica
+        //[HttpGet]
+        //[Route("AgendaMedica/{id}")]
+        //public IActionResult AgendaMedica(int id)
+        //{
+        //    List<Consulta> consultas = _consultaDAO.ListarPorMedico(id);
+        //    if (consultas.Count > 0)
+        //    {
+        //        return Ok(consultas);
+        //    }
+        //    return BadRequest(new { msg = "A lista de consultas está vazia!" });
+        //}
 
 
     }
