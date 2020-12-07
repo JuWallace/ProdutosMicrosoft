@@ -13,5 +13,6 @@ namespace ProjetoAgendaMedica_Web.Models
         [ForeignKey("PlanoSaudeId")]
         public PlanoSaude PlanoSaude { get; set; }
         public int PlanoSaudeId { get; set; }
+
     }
 }

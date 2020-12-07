@@ -42,61 +42,9 @@ cliente@mercado.com.br - aB345@
 
 
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" asp-controller="Consulta" asp-action="Index" asp-route-id="0">Consulta</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" asp-controller="Agenda" asp-action="Index" asp-route-id="0">Agenda Médica</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-        </div>
-        <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" asp-controller="Home" asp-action="Index" asp-route-id="0">Agenda Médica WEB</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+Validação cadastro,
+Sessão,
 
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Cadastrar
-                    </a>
-
-                    @*<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" asp-controller="Medico" asp-action="Index">Médico</a>
-                            <a class="dropdown-item" asp-controller="Paciente" asp-action="Index">Paciente</a>
-                            <a class="dropdown-item" asp-controller="PlanoSaude" asp-action="Index">Plano de Saúde</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" asp-controller="Usuario" asp-action="Index">Usuário</a>
-                        </div>*@
-                </li>
-
-                @if (SignInManager.IsSignedIn(User))
-                {
-                    <li class="nav-item active">
-                        <a class="nav-link" asp-controller="Usuario" asp-action="Logout">Logout @User.Identity.Name</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="nav-item active">
-                        <a class="nav-link" asp-controller="Usuario" asp-action="Login">Login</a>
-                    </li>
-                }
-            </ul>
-        </div>
-    </nav>
 
 
 
